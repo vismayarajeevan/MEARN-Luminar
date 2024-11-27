@@ -1,0 +1,38 @@
+* class is triggered using object
+
+*object:-an object is used access class properties/functions outside.
+
+-how to create an object?
+
+syntax
+  new class-name()
+
+ * when we create a object for class first it moves access for constructor.
+
+
+ Features of oops
+  
+  1. Inheritance:-
+
+   a)classical inheritance:-use keyword extends
+           child class can access the parent class properties by using extends keyword.
+           * if same function is included in the chikd and parent function, it executes only the the function inside child class.
+              first check if that function is inside child class, it only moves to parent class if the function is not in child class
+
+    b)prototype inheritance
+
+      using keyword.__proto__
+
+      to link same key for multiple objects 
+
+
+      same name of function with different no.of arguments.
+      polymorphism cant work in directly in javascript.
+      polymorphism can be implement in javascript by using rest ope
+
+      used to combine rest of the data to a single array
+      uses ...\
+      we can take any no.of arguments by using rest operator
+events:-are triggered by user action, events occured in html elements
+types
+ 1.mouse triggered events

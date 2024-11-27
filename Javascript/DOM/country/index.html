@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Details</title>
+    <!-- css file -->
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Country Details</h1>
+        <div class="search-container">
+            <input type="text" placeholder="Enter country name......" id="userInput">
+            <button type="button" onclick="getCountryDetails()">Search</button>
+        </div>
+
+      <div id="result">
+            <!-- <div class="result-container">
+                <div class="country-image">
+                    <div class="image-placeholder">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="country-info">
+                    <div class="info-placeholder">
+                        <h2>Country Information</h2>
+                        
+                    </div>
+    
+                </div>
+    
+    
+    
+            </div> -->
+      </div>
+    </div>
+</body>
+
+<!-- javascript -->
+<script>
+
+//create a function for button
+
+const getCountryDetails = async () =>{
+    // const userInput = document.getElementById('userInput');
+    console.log(userInput.value);
+
+    if(userInput.value){
+        // call api 
+        const response = await fetch(`https://restcountries.com/v3.1/name/${userInput.value}?fullText=true`);
+        console.log(response);
+
+        // check the response 
+        if(response.status==200){
+             // we want to convert the function as asynchrounous . give async im getcountrydetails. give await for all responses
+        // remove unwanted details. get array of object format
+
+        const countryDetails =await response.json();
+        console.log(countryDetails);
+        const displayData=countryDetails[0]
+        console.log(displayData);
+         result.innerHTML = `
+
+          <div class="result-container">
+                <div class="country-image">
+                    <div class="image-placeholder">
+                        <img src="${displayData.flags.png}" alt="" id="flag">
+                        
+                    </div>
+                    <a href="${displayData.maps.googleMaps}">Click here to view map</a>
+                </div>
+                <div class="country-info">
+                    <div class="info-placeholder">
+                        <h2>Country Information</h2>
+                        
+                    </div>
+
+                    <div class="details">
+                        
+             <ul class="list-group">
+                                     <li class="list-group-item">Country Name :${displayData.name.common} </li>
+                                    <li class="list-group-item">Capital :${displayData.capital} </li>
+                                    <li class="list-group-item">Population :${displayData.population} </li>
+                                    <li class="list-group-item">Time Zone :${displayData.timezones} </li>
+                                    <li class="list-group-item">Continent :${displayData.continents} </li>
+                                    <li class="list-group-item">Languages :${Object.values(displayData.languages)} </li>
+                                    <li class="list-group-item">Currencies :${displayData.currencies [Object.keys(displayData.currencies)[0]].name} </li>
+                                </ul>
+
+                     </div>
+    
+                </div>
+    
+            </div>`
+
+        
+        
+
+        }else{
+            alert("Please enter a valid country.....!!!!!!")
+        }
+        
+        
+
+    }else{
+        alert("Please enter the country....!!!!!!")
+    }
+    
+}
+
+</script>
+</html>

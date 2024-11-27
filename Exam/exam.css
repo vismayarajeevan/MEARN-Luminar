@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home{
+    background-image: url('https://cdn.vectorstock.com/i/500p/15/71/abstract-3d-luxury-black-color-wave-lines-vector-43391571.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+.container-fluid{
+    width: 100%;
+    
+    
+}
+
+#logo1{
+    color: orange;
+    font-size: 30px;
+}
+
+#logo{
+    color: white;
+    font-size: 24px;
+    padding-left: 9px;
+}
+
+#content{
+    padding-left: 600px;
+}
+
+#head{
+    color: white;
+    margin-top: 180px;
+    margin-left: 60px;
+    font-size: 60px;
+}
+#btn{
+    margin-left: 60px;
+    padding-top: 10px;
+    border: solid orange;
+    border-radius: 9px;
+    color: orange;
+    background: none;
+    text-align: center;
+    padding: 5px 10px;
+}
+
+#btn:hover{
+    background-color: orange;
+    color: black;
+}
+
+/* media query */
+
+@media(max-width:760px){
+    #head{
+        margin-top: 30px;
+    }
+    
+    #content{
+       padding-left: 0px; 
+    }
+}
+
+
+/* services */
+
+#services{
+    width: 100%;
+    height: auto;
+    background-color: gray;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    flex-wrap: wrap;
+    
+}
+.div-img{
+    display: flex;
+    flex-direction: row;
+    
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.images{
+    width: 300px;
+   
+    
+}
+.images img{
+    width: 100%;
+    
+}
+
+
+/* footer */
+
+footer{
+    background-color: rgb(60, 52, 52);
+    margin-top: 0px;
+    
+
+    
+}
+.footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+footer h4{
+    color: orange;
+}
+.copyright{
+    padding-bottom: 10px;
+    color: white;
+    text-align: center;
+}
+
+
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    font-size: 1.5rem;
+   
+}

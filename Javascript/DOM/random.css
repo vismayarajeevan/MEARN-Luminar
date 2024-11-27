@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: Arial, sans-serif;
+}
+.card1{
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 500px;
+    height: 290px;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+.button{
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #6366f1, #a855f7);
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .card1 {
+        padding: 2rem;
+    }
+    
+    .button {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+    }
+}

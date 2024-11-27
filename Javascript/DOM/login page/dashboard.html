@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <div id="root">
+      <nav class="navbar">
+        <div class="nav-content">
+          <div class="user-profile">
+            <div class="user-avatar">
+              <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=faces" alt="User Avatar" />
+            </div>
+            <span class="user-name">John Doe</span>
+          </div>
+          
+          <button class="sign-out-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            <span onclick="logout()">Sign Out</span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="dashboard-content">
+        <div class="welcome-message">
+          Hi, <span class="user-highlight" id="displayUser">John</span>! 👋
+        </div>
+        
+        <div class="dashboard-cards">
+          <div class="card">
+            <h3>Quick Stats</h3>
+            <p>Your dashboard overview goes here</p>
+          </div>
+          <div class="card">
+            <h3>Recent Activity</h3>
+            <p>Your recent activities will appear here</p>
+          </div>
+          <div class="card">
+            <h3>Notifications</h3>
+            <p>Your notifications will be shown here</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script>
+    // to print entered name at dashboard
+    if(localStorage.getItem("username")){
+
+      displayUser.innerHTML=localStorage.getItem("username")
+
+     }else{
+      // if we click back of login page to show alert 
+      alert("Please login!!!!!!!!!!")
+      window.location="login.html";
+    }
+
+    function logout(){
+      // clear permanent storage
+      localStorage.clear()
+      // redirect to login page
+      window.location="login.html"
+    }
+  </script>
+</html>
